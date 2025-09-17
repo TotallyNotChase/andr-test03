@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ListyCityLab3</string>
+    <string name="provinceText">Province</string>
+    <string name="cityText">City</string>
+    <string name="addButtonDescr">Add a new city to the list</string>
+    <string name="editButtonDescr">Edit name of the city selected in listview</string>
 </resources>
