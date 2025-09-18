@@ -16,15 +16,30 @@ public class EditCityFragment extends DialogFragment {
         void editCity(int pos, City city);
     }
 
-    private final int cityPos;
-    private final String cityName;
+    private int cityPos;
+    private String cityName;
 
-    public EditCityFragment(int pos, String cityName) {
-        this.cityPos = pos;
-        this.cityName = cityName;
+    public static EditCityFragment newInstance(int cityPos, String cityName) {
+        EditCityFragment frag = new EditCityFragment();
+
+        Bundle args = new Bundle();
+        args.putInt("cityPos", cityPos);
+        args.putString("cityName", cityName);
+        frag.setArguments(args);
+
+        return frag;
     }
 
     private EditCityDialogListener listener;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        assert getArguments() != null;
+        cityPos = getArguments().getInt("cityPos");
+        cityName = getArguments().getString("cityName");
+    }
+
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);

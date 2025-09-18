@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements
             int pos = cityList.getCheckedItemPosition();
             if (pos != AdapterView.INVALID_POSITION) {
                 City c = dataList.get(pos);
-                new EditCityFragment(pos, c.getName()).show(getSupportFragmentManager(), "Edit City");
+                EditCityFragment.newInstance(pos, c.getName()).show(getSupportFragmentManager(), "Edit City");
             }
         });
     }
